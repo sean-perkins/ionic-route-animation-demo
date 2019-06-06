@@ -1,0 +1,5 @@
+<ion-slides [options]="sliderOpts">
+    <ion-slide *ngFor="let country of countries" (click)="selectCountry(country)">
+        <span class="country" [class.active]="isSelected(country)">{{ country }}</span>
+    </ion-slide>
+</ion-slides>

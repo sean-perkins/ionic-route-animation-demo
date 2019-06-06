@@ -1,0 +1,62 @@
+
+
+:host {
+    --card-width: 270px;
+    --card-height: 485px;
+    --border-radius: 30px;
+    --background-image: '';
+}
+
+.card {
+    width: var(--card-width);
+    height: var(--card-height);
+    border-radius: var(--border-radius);
+    background-size: cover;
+    background-image: var(--background-image);
+    background-position: center center;
+    transition: all .3s;
+    color: var(--ion-color-light);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+    app-heading {
+        margin-bottom: 5px;
+    }
+    .inner-card {
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+
+    .like-container {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 50px;
+        background: #00000033;
+        border-bottom-left-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:after {
+        content: '';
+        background-image: var(--background-image);
+        background-position: center bottom;
+        filter: blur(30px);
+        position: absolute;
+        bottom: -30px;
+        left: 0px;
+        height: 150px;
+        z-index: -1;
+        width: var(--card-width);
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,14 @@
+:host {
+    display: flex;
+}
+
+.swiper-slide {
+    width: 270px!important;
+    height: 550px!important;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+    app-card {
+        --card-height: 400px;
+    }
+}

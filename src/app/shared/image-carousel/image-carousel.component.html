@@ -1,0 +1,7 @@
+<ion-slides [options]="sliderOpts">
+    <ion-slide *ngFor="let image of backgroundImages;let i = index;" (click)="onSelectImage(i)">
+        <div class="image-card"
+            [class.active]="images[i] === selectedImage"
+            [style.background-image]="image"></div>
+    </ion-slide>
+</ion-slides>

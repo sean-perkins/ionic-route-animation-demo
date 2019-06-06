@@ -1,0 +1,15 @@
+<ion-content>
+    <ion-toolbar class="padding-2">
+        <app-heading large bold slot="start">Asia</app-heading>
+        <ion-buttons slot="end">
+            <ion-button (click)="openScanner()" color="dark">
+                <ion-icon slot="icon-only" name="qr-scanner"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <app-country-filter class="bottom-margin-3" [countries]="countries"></app-country-filter>
+
+    <app-card-carousel [locations]="locations"></app-card-carousel>
+
+</ion-content>

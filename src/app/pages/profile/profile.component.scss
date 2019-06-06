@@ -1,0 +1,47 @@
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar {
+    border-radius: 9999px;
+    width: 95px;
+    height: 95px;
+}
+
+ion-toolbar {
+    --ion-toolbar-color: var(--ion-color-dark);
+    --padding-end: 0px;
+}
+
+.follow-btn {
+    --background-activated: var(--ion-color-light-shade);
+    --color-activated: var(--ion-color-dark);
+    --background: var(--ion-color-light-shade);
+    --color: var(--ion-color-dark);
+    --background-focused: var(--ion-color-light-shade);
+    --color-focused: var(--ion-color-dark);
+    --border-radius: 0;
+    --padding-end: 20px;
+    --padding-start: 20px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    overflow: hidden;
+    margin-inline-end: 0px;
+    height: 40px;
+}
+
+.stats {
+    app-text {
+        color: var(--ion-color-medium);
+    }
+}

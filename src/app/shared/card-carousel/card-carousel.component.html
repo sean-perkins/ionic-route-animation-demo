@@ -1,0 +1,5 @@
+<ion-slides [options]="sliderOpts">
+    <ion-slide *ngFor="let location of locations" (click)="viewCard(location)">
+        <app-card [location]="location"></app-card>
+    </ion-slide>
+</ion-slides>

@@ -1,0 +1,17 @@
+
+.swiper-slide {
+    width: 115px !important;
+    height: 145px !important;
+}
+
+.image-card {
+    background-size: cover;
+    background-position: center center;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+    &.active {
+        border: 3px solid white;
+    }
+}

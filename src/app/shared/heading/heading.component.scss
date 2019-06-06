@@ -1,0 +1,17 @@
+
+
+:host([large]) {
+    font-size: 32px;
+}
+
+:host([medium]) {
+    font-size: 24px;
+}
+
+:host([small]) {
+    font-size: 20px;
+}
+
+:host([bold]) {
+    font-weight: bold;
+}

@@ -1,0 +1,43 @@
+<div class="bg-image"
+    [class.deactivate]="deactivated"
+    [class.active]="activated"></div>
+
+<ion-toolbar class="padding-2">
+    <ion-buttons slot="start">
+        <ion-button (click)="closeDetail()">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-button>
+            <ion-icon name="more"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+</ion-toolbar>
+
+<div class="page-container" *ngIf="location && activated">
+    <div></div>
+    <div class="column" (click)="viewTourDetail()">
+        <app-heading class="title" large bold>{{ location.name }}</app-heading>
+        <div class="stats height-margin-2">
+            <div class="stat">
+                <app-text>
+                    <ion-icon name="time"></ion-icon> {{ location.distance }}
+                </app-text>
+            </div>
+            <div class="stat">
+                <app-text>
+                    <ion-icon name="flag"></ion-icon> {{ location.distance }}
+                </app-text>
+            </div>
+        </div>
+
+        <app-text class="description" *ngIf="location.description">{{ location.description }}</app-text>
+    </div>
+
+    <app-image-carousel *ngIf="location.relatedImages && location.relatedImages.length > 0"
+        class="image-carousel bottom-margin-2"
+        (selectImage)="onSelectImage($event)"
+        [images]="location.relatedImages"></app-image-carousel>
+
+</div>

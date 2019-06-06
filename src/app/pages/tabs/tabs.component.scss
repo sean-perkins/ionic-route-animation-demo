@@ -1,0 +1,18 @@
+
+
+:host {
+    display: block!important;
+}
+
+ion-tab-bar {
+    --color-selected: var(--ion-color-dark);
+    --border:none;
+    height: 80px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}

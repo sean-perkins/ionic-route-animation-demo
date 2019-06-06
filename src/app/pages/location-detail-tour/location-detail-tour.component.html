@@ -1,0 +1,21 @@
+<div class="bg-image" [class.active]="activated"></div>
+
+<ion-toolbar class="padding-2">
+    <ion-buttons slot="start">
+        <ion-back-button text="" defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+</ion-toolbar>
+
+<div class="sheet" *ngIf="location && activated">
+    <ion-button class="map-btn">
+        <ion-icon slot="icon-only" mode="md" name="navigate"></ion-icon>
+    </ion-button>
+    <div class="content width-padding-2">
+        <app-heading class="bottom-margin-1" large>{{ location.name }}</app-heading>
+        <app-text bold>{{ location.description }}</app-text>
+    </div>
+    <div class="inner-sheet">
+
+        <ion-button color="primary" expand="block">Commence The Tour</ion-button>
+    </div>
+</div>

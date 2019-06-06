@@ -9,3 +9,16 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap');
+
+html, body {
+    --ion-font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@import 'theme/utils/spacers';

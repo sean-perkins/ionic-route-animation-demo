@@ -1,0 +1,9 @@
+<div class="card">
+    <div class="inner-card">
+        <div class="like-container" (click)="toggleLiked($event)">
+            <ion-icon [name]="likedIcon"></ion-icon>
+        </div>
+        <app-heading medium>{{ location.name }}</app-heading>
+        <app-star-rating class="bottom-margin-1" [rating]="location.rating"></app-star-rating>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+:host {
+    --background-image: '';
+}
+
+.bg-image {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 0%;
+    background-image: var(--background-image);
+    position: absolute;
+    transition: background-size .3s ease, opacity .3s ease;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    &.active {
+        background-size: 100% 100%;
+        opacity: 1;
+    }
+    &.deactivate {
+        background-size: 0% 0%;
+        opacity: 0;
+    }
+}
+
+ion-toolbar {
+    --background: transparent;
+    --ion-toolbar-color: var(--ion-color-light);
+}
+
+.page-container {
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    color: var(--ion-color-light);
+    .title,
+    .description,
+    .image-carousel,
+    .stats {
+        opacity: 0;
+    }
+    .title, .stats {
+        animation: 1s slidein-right forwards;
+    }
+    .description {
+        animation: 1s description-slide forwards;
+        animation-delay: .3s;
+    }
+    .image-carousel {
+        animation: 1s images-slide forwards;
+        animation-delay: .4s;
+    }
+    .stats {
+        display: flex;
+        flex-direction: row;
+        .stat {
+            app-text {
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                ion-icon {
+                    margin-right: 5px;
+                }
+            }
+        }
+        .stat:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+@keyframes slidein-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes description-slide {
+    0% {
+        transform: translateX(50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes images-slide {
+    0% {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
