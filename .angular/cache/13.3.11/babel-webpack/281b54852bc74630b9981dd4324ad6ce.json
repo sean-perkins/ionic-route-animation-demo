@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { wrap } from './common';\nexport function cordova(pluginObj, methodName, config, args) {\n  return wrap(pluginObj, methodName, config).apply(this, args);\n}\n//# sourceMappingURL=cordova.js.map","map":null,"metadata":{},"sourceType":"module"}

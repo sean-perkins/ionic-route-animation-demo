@@ -3,15 +3,15 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: '', loadChildren: './pages/tabs/tabs.module#TabsPageModule'
+        path: '', loadChildren: () => import('./pages/tabs/tabs.module').then(m => m.TabsPageModule)
     },
     {
         path: 'location/:id',
-        loadChildren: './pages/location-detail/location-detail.module#LocationDetailPageModule'
+        loadChildren: () => import('./pages/location-detail/location-detail.module').then(m => m.LocationDetailPageModule)
     },
     {
         path: 'location/:id/tour',
-        loadChildren: './pages/location-detail-tour/location-detail-tour.module#LocationDetailTourPageModule'
+        loadChildren: () => import('./pages/location-detail-tour/location-detail-tour.module').then(m => m.LocationDetailTourPageModule)
     }
 ];
 @NgModule({
