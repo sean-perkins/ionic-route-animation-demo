@@ -17,3 +17,5 @@ Then, run the application:
 ```bash
 npm run start
 ```
+
+<video src="https://github.com/sean-perkins/ionic-route-animation-demo/raw/master/demo.mp4"></video>
