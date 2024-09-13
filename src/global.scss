@@ -1,24 +1,93 @@
-// http://ionicframework.com/docs/theming/
-@import '~@ionic/angular/css/core.css';
-@import '~@ionic/angular/css/normalize.css';
-@import '~@ionic/angular/css/structure.css';
-@import '~@ionic/angular/css/typography.css';
-@import '~@ionic/angular/css/display.css';
-@import '~@ionic/angular/css/padding.css';
-@import '~@ionic/angular/css/float-elements.css';
-@import '~@ionic/angular/css/text-alignment.css';
-@import '~@ionic/angular/css/text-transformation.css';
-@import '~@ionic/angular/css/flex-utils.css';
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
 
-@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap');
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
 
-html, body {
-    --ion-font-family: 'Ubuntu', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+// @import "@ionic/angular/css/palettes/dark.system.css";
+
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,500&display=swap");
+
+html,
+body {
+  --ion-font-family: "Ubuntu", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
-@import 'theme/utils/spacers';
+@import "theme/utils/spacers";
+
+swiper-container {
+  width: 100%;
+
+  --swiper-pagination-bullet-inactive-color: var(
+    --ion-text-color-step-800,
+    #cccccc
+  );
+  --swiper-pagination-color: var(--ion-color-primary, #0054e9);
+  --swiper-pagination-progressbar-bg-color: rgba(
+    var(--ion-text-color-rgb, 0, 0, 0),
+    0.25
+  );
+  --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+  --swiper-scrollbar-drag-bg-color: rgba(
+    var(--ion-text-color-rgb, 0, 0, 0),
+    0.5
+  );
+}
+
+swiper-slide {
+  display: flex;
+  position: relative;
+
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  height: 100%;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+swiper-slide img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}

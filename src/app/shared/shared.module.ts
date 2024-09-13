@@ -8,33 +8,36 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
 import { CountryFilterComponent } from './country-filter/country-filter.component';
 import { TextComponent } from './text/text.component';
 import { ImageCarouselComponent } from './image-carousel/image-carousel.component';
+import { SwiperDirective } from './appSwiper.directive';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        IonicModule
-    ],
-    declarations: [
-        HeadingComponent,
-        CardComponent,
-        CardCarouselComponent,
-        StarRatingComponent,
-        CountryFilterComponent,
-        TextComponent,
-        ImageCarouselComponent
-    ],
-    exports: [
-        CommonModule,
-        IonicModule,
-        HeadingComponent,
-        CardComponent,
-        CardCarouselComponent,
-        CountryFilterComponent,
-        TextComponent,
-        ImageCarouselComponent
-    ],
-    schemas: [
-        CUSTOM_ELEMENTS_SCHEMA
-    ]
+  imports: [
+    CommonModule,
+    IonicModule
+  ],
+  declarations: [
+    HeadingComponent,
+    CardComponent,
+    CardCarouselComponent,
+    StarRatingComponent,
+    CountryFilterComponent,
+    TextComponent,
+    ImageCarouselComponent,
+    SwiperDirective
+  ],
+  exports: [
+    CommonModule,
+    IonicModule,
+    HeadingComponent,
+    CardComponent,
+    CardCarouselComponent,
+    CountryFilterComponent,
+    TextComponent,
+    ImageCarouselComponent,
+    SwiperDirective
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ]
 })
 export class SharedModule { }

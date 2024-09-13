@@ -1,44 +1,48 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { IonicSlides } from '@ionic/angular';
+import { SwiperOptions } from 'swiper/types';
 
 
 @Component({
-    selector: 'app-image-carousel',
-    templateUrl: 'image-carousel.component.html',
-    styleUrls: ['image-carousel.component.scss']
+  selector: 'app-image-carousel',
+  templateUrl: 'image-carousel.component.html',
+  styleUrls: ['image-carousel.component.scss']
 })
 export class ImageCarouselComponent implements OnInit {
 
-    @Input() images: string[];
+  @Input() images: string[] = [];
 
-    @Output() selectImage = new EventEmitter();
+  @Output() selectImage = new EventEmitter();
 
-    sliderOpts = {
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-        slidesOffsetBefore: 20
-    };
+  modules = [IonicSlides];
 
-    backgroundImages: SafeStyle[] = [];
+  sliderOpts: SwiperOptions = {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    slidesOffsetBefore: 20
+  };
 
-    selectedImage: string;
+  backgroundImages: SafeStyle[] = [];
 
-    constructor(private sanitizer: DomSanitizer) { }
+  selectedImage?: string;
 
-    ngOnInit() {
-        this.images.forEach(imageUrl => {
-            this.backgroundImages.push(this.sanitizer.bypassSecurityTrustStyle(`url(${imageUrl})`));
-        });
+  constructor(private sanitizer: DomSanitizer) { }
+
+  ngOnInit() {
+    this.images.forEach(imageUrl => {
+      this.backgroundImages.push(this.sanitizer.bypassSecurityTrustStyle(`url(${imageUrl})`));
+    });
+  }
+
+  onSelectImage(index: number) {
+    const image = this.images[index];
+    if (this.selectedImage === image) {
+      this.selectedImage = undefined;
+    } else {
+      this.selectedImage = image;
     }
-
-    onSelectImage(index: number) {
-        const image = this.images[index];
-        if (this.selectedImage === image) {
-            this.selectedImage = undefined;
-        } else {
-            this.selectedImage = image;
-        }
-        this.selectImage.emit(this.selectedImage);
-    }
+    this.selectImage.emit(this.selectedImage);
+  }
 
 }
